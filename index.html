@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Você ❤️</title>
+
+    <!-- Fonte romântica -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+
+            background-image: url("fundo.png.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            background-color: rgba(233,108,195,0.55);
+            background-blend-mode: overlay;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            padding: 20px 0;
+        }
+
+        /* Corações no fundo */
+        .coracao {
+            position: fixed;
+            font-size: 20px;
+            opacity: 0.2;
+            animation: flutuar 6s linear infinite;
+            animation-delay: var(--delay);
+            left: var(--pos);
+            bottom: -50px;
+            pointer-events: none;
+        }
+
+        @keyframes flutuar {
+            0% { transform: translateY(0) scale(0.8); opacity: 0.25; }
+            50% { opacity: 0.4; }
+            100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+        }
+
+        .container {
+            background: rgba(253, 185, 229, 0.93);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 25px;
+            width: 92%;
+            max-width: 550px;
+
+            box-shadow: 0 0 25px rgba(255, 120, 185, 0.6);
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.6);
+
+            animation: brilho 4s ease-in-out infinite alternate;
+
+            position: relative;
+        }
+
+        @keyframes brilho {
+            from { box-shadow: 0 0 18px rgba(255, 150, 210, 0.45); }
+            to   { box-shadow: 0 0 32px rgba(255, 170, 220, 0.8); }
+        }
+
+        /* FLORES DECORATIVAS */
+        .flor {
+            position: absolute;
+            width: 120px;
+            opacity: 0.7;
+            pointer-events: none;
+            animation: florBrilha 5s ease-in-out infinite alternate;
+        }
+
+        .flor.top-left {
+            top: -40px;
+            left: -40px;
+        }
+
+        .flor.bottom-right {
+            bottom: -40px;
+            right: -40px;
+        }
+
+        @keyframes florBrilha {
+            from { transform: scale(1) rotate(0deg); opacity: 0.6; }
+            to   { transform: scale(1.05) rotate(3deg); opacity: 0.85; }
+        }
+
+        .foto-topo {
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: 0.3s ease;
+        }
+
+        .foto-topo.clicada {
+            transform: scale(1.03);
+        }
+
+        h1 {
+            font-family: "Great Vibes", cursive;
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+            color: #b30059;
+            text-shadow: 0 0 10px rgba(255, 140, 200, 0.4);
+        }
+
+        /* Galeria responsiva */
+        .galeria {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .galeria img {
+            height: 110px;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+            transition: 0.2s ease;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.08);
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.65;
+            white-space: pre-line;
+            margin-top: 20px;
+        }
+
+        .assinatura {
+            margin-top: 25px;
+            font-family: "Great Vibes", cursive;
+            font-size: 2rem;
+            color: #b30059;
+        }
+
+        /* Ajustes ESPECÍFICOS para celular */
+        @media (max-width: 480px) {
+            .flor {
+                width: 90px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .galeria img {
+                height: 95px;
+            }
+
+            p {
+                font-size: 1.05rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Corações flutuando no fundo -->
+    <div class="coracao" style="--delay:0s; --pos:15%;">❤️</div>
+    <div class="coracao" style="--delay:1s; --pos:45%;">💗</div>
+    <div class="coracao" style="--delay:3s; --pos:70%;">💕</div>
+    <div class="coracao" style="--delay:2s; --pos:90%;">💖</div>
+
+    <div class="container">
+
+        <!-- FLORES NOS CANTOS -->
+        <img src="flor.png" class="flor top-left">
+        <img src="flor.png" class="flor bottom-right">
+
+        <img id="fotoTopo" src="lara4.png" alt="Nossa foto" class="foto-topo">
+
+        <h1>Para Você ❤️</h1>
+
+        <div class="galeria">
+            <img src="lara2.png" alt="Foto 1">
+            <img src="lara1.png" alt="Foto 2">
+            <img src="lara3.png" alt="Foto 3">
+        </div>
+
+        <p id="texto">
+Meu amor, Lara...
+
+Eu queria que você soubesse, de um jeito simples e bonito, o quanto você significa pra mim. 
+Desde que você entrou na minha vida, tudo ficou mais leve, mais colorido e mais cheio de sentido.
+
+Você é aquela parte boa do dia que eu espero, é o abraço que acalma, o sorriso que ilumina, o motivo que faz tudo valer mais a pena.
+
+Eu admiro tanto cada detalhe seu. Você me faz querer ser alguém melhor... alguém que combina com o tamanho do carinho que eu sinto por você.
+
+Obrigado por cada risada, cada mensagem, cada “tô aqui”.  
+Obrigado por ser você — exatamente desse jeitinho que eu amo tanto.
+
+Se um dia você duvidar de algo, duvide de tudo… menos do meu amor por você.  
+Ele cresce um pouquinho mais todos os dias.
+        </p>
+
+        <p class="assinatura">Com amor, Victor ❤️</p>
+    </div>
+
+    <script>
+        const fotoTopo = document.getElementById("fotoTopo");
+        const miniaturas = document.querySelectorAll(".galeria img");
+
+        miniaturas.forEach(img => {
+            img.addEventListener("click", () => {
+                fotoTopo.classList.remove("clicada");
+                void fotoTopo.offsetWidth;
+                fotoTopo.classList.add("clicada");
+                fotoTopo.src = img.src;
+            });
+        });
+    </script>
+
+</body>
+</html>
